@@ -14,16 +14,33 @@ vector<string> split(const string &);
  *  1. INTEGER_ARRAY a
  *  2. INTEGER_ARRAY b
  */
+vector<int> get_primenumbers(){
+    vector<int>factors;
+    vector<int>primenumbers;
+    for(int j=2; j<=100;j++){
+        for(int i = 1; i<=j;i++){
+            if(j%i == 0)
+                factors.push_back(i);
+        }
+        if(factors.size() == 2)
+            primenumbers.push_back(j);
+        factors.clear();
+    }
+   /* for(int i = 0; i<primenumbers.size();i++)
+        cout<<primenumbers[i]<<" "; */
+    return primenumbers;
+}
+int find_LCM(vector<int> a){
+    vector<int> primenumbers = get_primenumbers();
+    vector<vector<int>> prime_factorisation;
+    
+    for(int i = 0 ; i< a.size(); i++){
+        for()
+    }
+}
 
 int getTotalX(vector<int> a, vector<int> b) {
-    vector<int>prime;
-    int i,j;
-    for(i=2 ; i<=100 ; i++){
-        for(j=1 ; j<=i ; j++){
-            if(i%j !=0)
-
-}
-}
+  int lower_limit = find_LCM(a);
 }
 
 int main()
