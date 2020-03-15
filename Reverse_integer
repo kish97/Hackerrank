@@ -7,20 +7,18 @@ Write your code in this editor and press "Run" button to compile and execute it.
 *******************************************************************************/
 /*
 Algorithm:
-1. n%10 will give remainder (units place)
-2. to reverse a number, we should add this at highest place
-    how to add this at highest place?...multiply by its no. of digits
-    i should hold no of digits in an integer.
-    How to do that?
-    while(n!=0){
-        i++;
-        n=n/10;
-    }
+1. n%10 will give remainder
+2. To reverse a number, we should add this at highest place
+    how to add this at highest place?...
+    one clever way to do this is, 
+    reverse = reverse * 10 + rem;
+    what this will do ?
+    It will add remainder to last position at first but later on as we multiply it by 10,
+    it keeps on moving towards left making it highest place.
     while(n!=0){
         rem = n %10;
-        reverse += rem*pow(10,i);
+        reverse = reverse * 10 +rem;;
         n = n/10;
-        i--;
     }
 */
 
@@ -32,22 +30,14 @@ int main()
 {
     int n;
     cin>>n;
-    int temp = n;
-    int i=0;
+
     int rem,reverse;
     rem=reverse = 0;
-    temp=temp/10;
-    while(temp!=0){
-        temp=temp/10;
-        i++;
-    }
-    cout<<"i value :"<<i<<endl;
+    
     while(n!=0){
         rem = n %10;
-        reverse += rem*pow(10,i);
-        cout<<"reverse value at each iteration :"<<reverse<<endl;
+        reverse = reverse * 10 +rem;;
         n = n/10;
-        i--;
     }
     cout<<reverse;
     return 0;
